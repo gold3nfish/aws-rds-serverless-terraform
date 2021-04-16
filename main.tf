@@ -50,7 +50,7 @@ resource "aws_rds_cluster" "snapshot-cluster-lastest" {
   enabled_cloudwatch_logs_exports     = []
   engine                              = "aurora"
   engine_mode                         = "serverless"
-  engine_version                      = "5.6.10a"
+  engine_version                      = aws_db_cluster_snapshot.db_snapshot.engine_version
   final_snapshot_identifier           = null
   global_cluster_identifier           = ""
   iam_database_authentication_enabled = false
